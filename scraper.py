@@ -7,6 +7,7 @@ import unicodedata
 from string import punctuation
 import json
 
+''' NYT Article Scraper '''
 
 def convert_unicode_to_str(unicode):
     ''' Converts unicode to string '''
