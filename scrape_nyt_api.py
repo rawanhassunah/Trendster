@@ -3,7 +3,10 @@ import json
 from datetime import datetime, timedelta
 import time
 
+''' NYT Article Search API Scraper '''
+
 def single_query(page_offset, link, payload):
+   '''1 page request'''
    response = requests.get(link+'?page={}'.format(page_offset), params=payload)
    if response.status_code != 200:
        print 'Failed: status_code', response.status_code
@@ -11,6 +14,7 @@ def single_query(page_offset, link, payload):
        return response.json()
 
 def get_many(days, link, filename, api_key, fq):
+   '''Multiple page requests slowed down by 5 seconds'''
     responses = []
     not_scraped = []
     today = datetime(2017, 1, 14)
@@ -42,10 +46,12 @@ def get_many(days, link, filename, api_key, fq):
     return not_scraped, responses
 
 def save_to_json(filename, datapoints):
+   '''Save to json file'''
   with open(filename, 'w') as f:
       json.dump(datapoints, f)
 
 def open_json_file(filename):
+   '''Load a json file'''
   with open(filename) as f:
       data = json.load(f)
   return data
