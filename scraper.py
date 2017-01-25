@@ -76,7 +76,7 @@ def get_datapoint_info(urls, filename, news_site):
         code_section =  soup.article
         try:
             datapoint["title"] = get_h1_title(code_section)
-            code_text = get_unfiltered_code(soup,'story-content')
+            code_text = get_unfiltered_code(code_section,'story-content')
             datapoint["article"] = code_text
             datapoint["url"] = url
             datapoints.append(str(datapoint))
