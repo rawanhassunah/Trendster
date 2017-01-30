@@ -60,6 +60,6 @@ if __name__ == '__main__':
     api_key = 'Enter API key here'
     link = 'http://api.nytimes.com/svc/search/v2/articlesearch.json'
     filename = 'Enter json file dump file here'
-    fq = 'section_name:("Arts" "Blogs" "Business" "Business Day" "Education" "Fashion & Style" "Health" "International Home" "Learning" "Magazine" "National" "Opinion" "Science" "Style" "Sunday Magazine" "T Magazine" "T:Style" "Technology" "Times Topics" "TimesMachine" "Travel" "U.S." "Universal" "Washington" "World" "New York" "N.Y./Region" "N.Y. / Region")'
+    fq = 'section_name:(query)'
 
     not_scraped, responses = get_many(days=365,link=link,filename=filename,api_key=api_key,fq=fq)
