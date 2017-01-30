@@ -14,7 +14,8 @@ def convert_unicode_to_str(unicode):
     return unicodedata.normalize('NFKD', unicode).encode('ascii','ignore')
 
 def urls_from_dataframe(df, article_nums, filename):
-    '''Grabs urls from df.read_json. Each data point is an article from the NYT api'''
+    '''Grabs urls from df.read_json. 
+    Each data point is an article from the NYT api'''
     urls = []
     for article in xrange(article_nums):
         print "Getting url {}".format(article)
@@ -42,7 +43,8 @@ def open_json(filename):
     return file_
 
 def get_datapoint_info_pre(urls, filename, news_site):
-    '''Given a url, uses BeautifulSoup and requests to scrape page and return url, article body, and title'''
+    '''Given a url, uses BeautifulSoup and requests to scrape page 
+    and return url, article body, and title'''
     '''works for nyt pre 1995'''
     datapoints=[]
     counter = 0
@@ -65,7 +67,8 @@ def get_datapoint_info_pre(urls, filename, news_site):
     return datapoints
 
 def get_datapoint_info(urls, filename, news_site):
-    '''Given a url, uses BeautifulSoup and requests to scrape page and return url, article body, and title'''
+    '''Given a url, uses BeautifulSoup and requests to 
+    scrape page and return url, article body, and title'''
     '''works for nyt post 1995'''
     datapoints=[]
     counter = 0
