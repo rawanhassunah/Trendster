@@ -36,7 +36,8 @@ def json_to_list(json_file):
     return json_file_new
 
 def list_to_csv(list_of_lists, filename):
-    ''' Cleans each entry of a list (the url, title and article body), creates a date as a datetime object. Formats 4 columns. Writes to a csv file.
+    ''' Cleans each entry of a list (the url, title and article body), 
+    creates a date as a datetime object. Formats 4 columns. Writes to a csv file.
 
     Different html formatting for NYT before and after 1996. '''
     with open(filename, 'w') as f:
@@ -80,7 +81,8 @@ def list_to_csv(list_of_lists, filename):
                 writer.writerow((lst[2], lst[1], date.date(), lst[0]))
 
 if __name__ == '__main__':
-    ''' Cleans data and writes it to a csv file with 4 columns: Title, Article (content), Date (datetime object), URL. '''
+    ''' Cleans data and writes it to a csv file with 4 columns: 
+    Title, Article (content), Date (datetime object), URL. '''
     json_file = open_json(path)
     list_of_jsons = json_to_list(json_file)
     list_to_csv(list_of_jsons, filename)
