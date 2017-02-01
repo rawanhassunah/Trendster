@@ -14,7 +14,6 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import GridSearchCV
 from string import punctuation
-from textblob import TextBlob
 
 class LemmaTokenizer(object):
     def __init__(self):
@@ -104,18 +103,18 @@ if __name__ == '__main__':
     y = df['y']
 
     # Transform data using fitted count vector
-    count_vector = fitted_count_vector.transform(X)
+    count_vector = fitted_count_vector.transform(X['Article'])
     tfidf_vector_fit = fit_tfidf(count_vector)
     tfidf_vector_transform = transform_tfidf(tfidf_vector_fit, count_vector)
 
     # Predict on gradient boosting model
-    y_pred = GB.predict(tfidf_vector_transform.toarray())
+    y_pred = model.predict(tfidf_vector_transform.toarray())
 
     # Get indices of articles, which were classified as 1
-    fem_indices = np.where(y_pred==1)[0]
+    topic_indices = np.where(y_pred==1)[0]
 
     # Select corresponding articles from dataframe
-    fem_df = X.iloc[fem_indices]
+    topic_df = X.iloc[topic_indices]
 
     # Save articles to csv file
-    pd.to_csv('feminism_articles.csv')
+    pd.to_csv('topic_articles.csv')
