@@ -60,10 +60,6 @@ def list_to_csv(list_of_lists, filename):
                 else:
                     lst[1] = ''.join(str(i.string) for i in soup)
                 writer.writerow((lst[2], lst[1], date.date(), lst[0]))
-            elif len(lst) < 3:
-                print lst[0]
-            elif lst[0][32:34]+'-'+lst[0][35:37]+'-'+lst[0][27:31] == 'm/-00-es.c':
-                print lst[0]
             else:
                 date_correct_format = lst[0][32:34]+'-'+lst[0][35:37]+'-'+lst[0][27:31]
                 date = datetime.strptime(date_correct_format, '%m-%d-%Y')
