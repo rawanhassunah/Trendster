@@ -2,7 +2,7 @@ from __future__ import division
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, TfidfTransformer
 from sklearn.model_selection import train_test_split
 import nltk
 from nltk import word_tokenize
@@ -80,6 +80,32 @@ def transform_tfidf(tfidf_vector, count_vector):
     return tfidf_vector.transform(count_vector)
 
 
+def plot_roc_curve(y_test, y_proba, pos_label=1):
+    '''
+    Plot ROC Curve.
+    '''
+    fpr, tpr, thresholds = roc_curve(y_test, y_proba, pos_label=1)
+    roc_auc = auc(x=fpr, y=tpr)
+    plt.plot(fpr, tpr, label=roc_auc)
+    plt.title('ROC Curve', fontsize=40, weight='bold')
+    plt.ylabel('True Positive Rate', size=15, weight='bold')
+    plt.xlabel('False Positive Rate', size=15, weight='bold')
+
+def standard_confusion_matrix(y_true, y_pred):
+    '''
+    Input: predicted y probabilities, true y labels.
+    Output: true positives, false positives, false negatives, true negatives, and confusion matrix.
+    '''
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+    tp = np.sum(y_true*y_pred)
+    fp = np.sum(((y_pred-y_true) == 1).astype(int))
+    fn = np.sum(((y_true-y_pred) == 1).astype(int))
+    tn = np.sum((y_pred == y_true).astype(int)) - tp
+    cm = np.array([[tp, fp], [fn, tn]])
+    return tp, fp, fn, tn, cm
+
+
 def pickle_file(model, path):
     '''
     Pickles a fitted model.
@@ -104,7 +130,7 @@ if __name__ == '__main__':
                         max_features=10000, tokenizer=LemmaTokenizer())
     tfidf_vector_fit_train = fit_tfidf(count_vector_train)
     tfidf_vector_transform_train = transform_tfidf(tfidf_vector_fit_train, count_vector_train)
-    
+
     ''' Pickle fitted count vector '''
     pickle_file(fitted_count_vector_train, 'count_vector.pkl')
 
@@ -114,11 +140,28 @@ if __name__ == '__main__':
     tfidf_vector_fit_test = fit_tfidf(count_vector_test)
     tfidf_vector_transform_test = transform_tfidf(tfidf_vector_fit_test, count_vector_test)
 
-    ''' Gradient Boosting Classifier '''
+    # Gradient Boosting Classifier
     # Instantiate
     GB = GradientBoostingClassifier(n_estimators=100)
     # Fit
     GB.fit(tfidf_vector_transform_train, y_train)
-    
+    # Predict
+    y_pred = GB.predict(tfidf_vector_transform_test.toarray())
+    # Predicted Probabilities
+    y_proba = GB.predict_proba(tfidf_vector_transform_test.toarray())[:,1]
+
+
     ''' Pickle model '''
     pickle_file(GB, 'gb_model.pkl')
+
+
+    ''' ROC curve and success metrics '''
+    plot_roc_curve(y_test, y_proba)
+    plt.show()
+
+    tp, fp, fn, tn, cm = standard_confusion_matrix(y_test, y_pred)
+    recall = tp / (tp + fn)
+    precision = tp / (tp + fp)
+    f1 = 2 * (precision * recall) / (precision + recall)
+    print "confusion matrix: \n{}".format(cm)
+    print "recall: {}, precision: {}, f1: {}".format(recall, precision, f1)
