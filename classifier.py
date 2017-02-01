@@ -38,7 +38,10 @@ def csv_to_df(path):
     return pd.read_csv(path)
 
 def count_vectorizer(X, max_features=None, tokenizer=None):
-    cv = CountVectorizer(max_features=max_features, tokenizer=tokenizer, stop_words='english', max_df=0.7)
+    cv = CountVectorizer(max_features=max_features, 
+                         tokenizer=tokenizer, 
+                         stop_words='english', 
+                         max_df=0.7)
     fitted_count_vector = cv.fit(X)
     count_vector = cv.transform(X)
     return count_vector, fitted_count_vector
