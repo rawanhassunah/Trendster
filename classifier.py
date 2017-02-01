@@ -2,6 +2,7 @@ from __future__ import division
 import re
 import pandas as pd
 import numpy as np
+import cPickle as pickle
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.decomposition import NMF, LatentDirichletAllocation
 import nltk
@@ -86,12 +87,13 @@ def standard_confusion_matrix(y_true, y_pred):
 def open_pickled_model(path):
     with open(path) as f:
         model = pickle.load(f)
+    return model
 
 
 if __name__ == '__main__':
     # Load fitted model
     model = open_pickled_model('gb_model.pkl')
-    fitted_count_vector = open_pickle_model('count_vector.pkl')
+    fitted_count_vector = open_pickled_model('count_vector.pkl')
 
     # Load unlabeled data
     df = csv_to_df('nyt_data.csv')
