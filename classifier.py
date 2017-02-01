@@ -65,24 +65,6 @@ def lda(X, n_topics=None):
     X_new = model.fit_transform(X)
     pass
 
-def plot_roc_curve(y_test, y_proba, pos_label=1):
-    fpr, tpr, thresholds = roc_curve(y_test, y_proba, pos_label=1)
-    roc_auc = auc(x=fpr, y=tpr)
-    plt.plot(fpr, tpr, label=roc_auc)
-    plt.title('ROC Curve', fontsize=40, weight='bold')
-    plt.ylabel('True Positive Rate', size=15, weight='bold')
-    plt.xlabel('False Positive Rate', size=15, weight='bold')
-
-def standard_confusion_matrix(y_true, y_pred):
-    y_true = np.array(y_true)
-    y_pred = np.array(y_pred)
-    tp = np.sum(y_true*y_pred)
-    fp = np.sum(((y_pred-y_true) == 1).astype(int))
-    fn = np.sum(((y_true-y_pred) == 1).astype(int))
-    tn = np.sum((y_pred == y_true).astype(int)) - tp
-    cm = np.array([[tp, fp], [fn, tn]])
-    return tp, fp, fn, tn, cm
-
 def open_pickled_model(path):
     with open(path) as f:
         model = pickle.load(f)
