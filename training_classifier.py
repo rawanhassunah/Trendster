@@ -40,7 +40,10 @@ def tts(X, y):
     Input: X and y dataframes.
     Output: training and testing dataframes for both X and y.
     '''
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42, stratify = y)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, 
+                                                        test_size = 0.2, 
+                                                        random_state = 42, 
+                                                        stratify = y)
     return X_train, X_test, y_train, y_test
 
 def csv_to_df(path):
@@ -55,7 +58,10 @@ def count_vectorizer(X, max_features=None, tokenizer=None):
     Outputs both the fitted and the transformed count vector.
     Fitted count vector can be used in a tfidf transformer.
     '''
-    cv = CountVectorizer(max_features=max_features, tokenizer=tokenizer, stop_words='english', max_df=0.7)
+    cv = CountVectorizer(max_features=max_features, 
+                         tokenizer=tokenizer, 
+                         stop_words='english', 
+                         max_df=0.7)
     fitted_count_vector = cv.fit(X)
     count_vector = cv.transform(X)
     return count_vector, fitted_count_vector
