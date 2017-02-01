@@ -104,6 +104,9 @@ if __name__ == '__main__':
                         max_features=10000, tokenizer=LemmaTokenizer())
     tfidf_vector_fit_train = fit_tfidf(count_vector_train)
     tfidf_vector_transform_train = transform_tfidf(tfidf_vector_fit_train, count_vector_train)
+    
+    ''' Pickle fitted count vector '''
+    pickle_file(fitted_count_vector_train, 'count_vector.pkl')
 
     ''' Testing Gradient Boosting '''
     # Testing Data
@@ -111,10 +114,11 @@ if __name__ == '__main__':
     tfidf_vector_fit_test = fit_tfidf(count_vector_test)
     tfidf_vector_transform_test = transform_tfidf(tfidf_vector_fit_test, count_vector_test)
 
-    # Gradient Boosting Classifier
+    ''' Gradient Boosting Classifier '''
     # Instantiate
     GB = GradientBoostingClassifier(n_estimators=100)
     # Fit
     GB.fit(tfidf_vector_transform_train, y_train)
-
+    
+    ''' Pickle model '''
     pickle_file(GB, 'gb_model.pkl')
