@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, TfidfTransformer
+from sklearn.metrics import recall_score, precision_score, f1_score, confusion_matrix, roc_curve, auc
 from sklearn.model_selection import train_test_split
 import nltk
 from nltk import word_tokenize
