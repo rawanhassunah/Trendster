@@ -1,2 +1,2 @@
 # Trendster
-Galvanize Capstone Project Repo: demystifying the evolution of topics over time.
+Galvanize Capstone Project: Demystifying trends and tracking topics across verticals.
