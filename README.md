@@ -8,10 +8,8 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 
 ## Pipeline
 ### Filtering
-<p align="center">
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline1.png)
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline2.png)
-</p>
+![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline1.png){.center}
+![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline2.png){.center}
 
 ### Topic Modeling
 <p align="center">
