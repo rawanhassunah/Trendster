@@ -12,18 +12,12 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 ![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline2.png){.center}
 
 ### Topic Modeling
-<p align="center">
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline3.png)
-</p>
+![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline3.png){.center}
 
 ## Key Takeaways
 ### Relevant and time dependent categories.
-<p align="center">
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/headlines.png)
-</p>
+![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/headlines.png){.center}
 
 ### Meaningful nuances between topics.
-<p align="center">
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/lawsuits.png)
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/sh.png)
-</p>
+![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/lawsuits.png){.center}
+![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/sh.png){.center}
