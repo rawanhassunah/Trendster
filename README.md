@@ -20,4 +20,4 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 
 ### Meaningful nuances between topics.
 ![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/lawsuits.png)
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/sh.png?syle=centerme)
+![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/sh.png)
