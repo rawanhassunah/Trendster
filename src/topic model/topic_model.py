@@ -25,16 +25,13 @@ def count_vectorizer(X, max_features=None, tokenizer=None):
     Outputs a transformed count vector and a fitted count vector.
     '''
     cv = CountVectorizer(max_features=max_features, tokenizer=tokenizer, stop_words='english', max_df=0.7)
-    fitted_count_vector = cv.fit(X)
-    count_vector = cv.transform(X)
-    return count_vector, fitted_count_vector
+    return cv.transform(X), cv.fit(X)
 
 def fit_tfidf(count_vector):
     '''
     Fits a term frequency matrix on a count vector.
     '''
-    tfidf = TfidfTransformer(use_idf=False)
-    tfidf_vector = tfidf.fit(count_vector)
+    tfidf_vector = TfidfTransformer(use_idf=False).fit(count_vector)
     return tfidf_vector
 
 def transform_tfidf(tfidf_vector, count_vector):
@@ -59,8 +56,7 @@ def remove_punctuation(df):
     '''
     Removes punctuation from dataframe.
     '''
-    punct = punctuation
-    pattern = r"[{}]".format(punct) # create the pattern
+    pattern = r"[{}]".format(punctuation) # create the pattern
     X = [re.sub(pattern, "", article) for article in df['Article']]
     return X
 
@@ -95,7 +91,6 @@ def top_topic_words(feature_words, components, num_top_words):
     for topic in components:
         word_idx = np.argsort(topic)[::-1][0:num_top_words]
         topic_words.append([feature_words[i] for i in word_idx])
-
     for t in range(len(topic_words)):
         print("Topic {}: {}".format(t, ' '.join(topic_words[t])))
 
