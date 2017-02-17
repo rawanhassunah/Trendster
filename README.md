@@ -14,7 +14,7 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 ![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline2.png)
 <p align="center"> I used the term frequency matrix that was fitted on my training data to transform the rest of my New York Times articles and passed the matrix through my trained gradient boosting model. After carefully inspecting my data and adjusting my threshold to 0.67, my model classified 18,000 articles as relating to gender equality. I decided to increase my classification threshold as in my case, I cared more about having a lower false negative rate (some true positives were worth the sacrifice). </p>
 <p align="center"> • • • </p>
-<center> ![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/tf_matrix.png) </center>
+<center> <img href="https://github.com/rawanhassunah/Trendster/blob/master/images/tf_matrix.png" > </center>
 <p align="center"> The rows of the term frequency matrix represent the document space and the columns represent the term space. Each term frequency is normalized against the amount of terms in a given document. I used a term frequency matrix and not a term frequency inverse document frequency matrix (tfidf), which is further normalized on the number of documents in which a term occurs, as there is great variance in words used in articles. </p>
 
 ### Topic Modeling
