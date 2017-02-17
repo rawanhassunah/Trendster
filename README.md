@@ -17,7 +17,6 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 <p align="center">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/tf_matrix.png">
 </p>
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/tf_matrix.png){: .center-image }
 <p align="center"> The rows of the term frequency matrix represent the document space and the columns represent the term space. Each term frequency is normalized against the amount of terms in a given document. I used a term frequency matrix and not a term frequency inverse document frequency matrix (tfidf), which is further normalized on the number of documents in which a term occurs, as there is great variance in words used in articles. </p>
 
 ### Topic Modeling
@@ -25,7 +24,9 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 
 ## Key Takeaways
 ### Relevant and time dependent categories.
-![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/headlines.png)
+<p align="center">
+<img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/headlines.png">
+</p>
 
 ### Meaningful nuances between topics.
 ![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/lawsuits.png)
