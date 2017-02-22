@@ -21,6 +21,7 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 
 ### Topic Modeling
 ![Alt text](https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline3.png)
+<p align="center"> To extract subtopics from . </p>
 
 ## Key Takeaways
 ### Relevant and time dependent categories.
