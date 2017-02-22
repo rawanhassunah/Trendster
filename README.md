@@ -30,16 +30,22 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 <p align="center">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/pipeline3.png">
 </p>
-<p align="center"> To extract subtopics from . </p>
+<p align="center"> To extract subtopics from my corpus of articles about gender equality, I used a non-negative matrix factorization model (NMF). </p>
 
 ## Key Takeaways
 ### Relevant and time dependent categories.
 <p align="center">
+<img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/topics.png">
+</p>
+<p align="center"> My model was able to detect relevant and time dependent categories. In the context of gender equality and between the years of 1992 and 2004, the above subtopics were top of mind. </p>
+<p align="center">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/headlines.png">
 </p>
+<p align="center"> These are some of the headlines that came up during those years. </p>
 
 ### Meaningful nuances between topics.
 <p align="center">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/lawsuits.png">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/sh.png">
 </p>
+<p align="center"> My model was able to detect meaningful nuances between subtopics. For example, it made a distinction between articles about lawsuits about sexual assault, and actual reportings of rape and sexual assault. </p>
