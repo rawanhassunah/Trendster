@@ -7,6 +7,7 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 </p>
 <p align="center"> Since news is structured in a rigid categorical format, it may be difficult to follow a topic of interest in one snapshot. Generally, if one is interested in a topic, it tends to not exhibit this type of compartmentalization, and is actually more fluid in nature, sitting at the intersection of these categorical verticals. My idea was to create a set of tools and visualizations to help track the evolution of a topic of interest in the media over time. The topic that I chose to explore was gender equality. </p>
 
+
 ## Pipeline
 ### Filtering
 <p align="center">
@@ -38,6 +39,8 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/topics.png">
 </p>
 <p align="center"> My model was able to detect relevant and time dependent categories. In the context of gender equality and between the years of 1992 and 2004, the above subtopics were top of mind. </p>
+
+
 <p align="center">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/headlines.png">
 </p>
@@ -48,4 +51,6 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/lawsuits.png">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/sh.png">
 </p>
+
+
 <p align="center"> My model was able to detect meaningful nuances between subtopics. For example, it made a distinction between articles about lawsuits about sexual assault, and actual reportings of rape and sexual assault. </p>
