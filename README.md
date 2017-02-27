@@ -45,10 +45,14 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 </p>
 <p align="center"> My model showed that these topics were talked about pretty consistently over these years. </p>
 
+<p align="center"> • • • </p>
+
 <p align="center">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/headlines.png">
 </p>
 <p align="center"> These are some of the headlines that came up during those years. </p>
+
+<p align="center"> • • • </p>
 
 <p align="center">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/clinton.png">
