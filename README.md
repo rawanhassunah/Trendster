@@ -40,11 +40,20 @@ Galvanize Capstone Project: Demystifying trends and tracking topics across verti
 </p>
 <p align="center"> My model was able to detect relevant and time dependent categories. In the context of gender equality and between the years of 1992 and 2004, the above subtopics were top of mind. </p>
 
+<p align="center">
+<img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/all_trends.png">
+</p>
+<p align="center"> My model showed that these topics were talked about pretty consistently over these years. </p>
 
 <p align="center">
 <img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/headlines.png">
 </p>
 <p align="center"> These are some of the headlines that came up during those years. </p>
+
+<p align="center">
+<img align="center" src="https://github.com/rawanhassunah/Trendster/blob/master/images/clinton.png">
+</p>
+<p align="center"> "Clinton" was a big topic during that time, which makes sense that they would be top of mind due to Bill Clinton's presidency and Hilary Clinton's time in the senate. However, specifically within the context of gender equality was due to President Clinton's sexual harassment lawsuits, which started in 1997, and Hilary being the first first lady to serve in the senate. </p>
 
 ### Meaningful nuances between topics.
 <p align="center">
