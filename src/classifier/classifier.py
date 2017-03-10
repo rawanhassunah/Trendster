@@ -35,12 +35,20 @@ class PorterStemTokenizer(object):
 
 
 def csv_to_df(path):
+    '''
+    Input: path.
+
+    Save pandas dataframe to csv file.
+    '''
     return pd.read_csv(path)
 
 def count_vectorizer(X, max_features=None, tokenizer=None):
-    cv = CountVectorizer(max_features=max_features, 
-                         tokenizer=tokenizer, 
-                         stop_words='english', 
+    '''
+    Fits and transforms data into a count vector (matrix of token counts).
+    '''
+    cv = CountVectorizer(max_features=max_features,
+                         tokenizer=tokenizer,
+                         stop_words='english',
                          max_df=0.7)
     fitted_count_vector = cv.fit(X)
     count_vector = cv.transform(X)
